@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
+[ext_resource path="res://entities/player/Arm.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/character.png" type="Texture" id=3]
+[ext_resource path="res://assets/images/weapon.png" type="Texture" id=4]
+[ext_resource path="res://entities/player/PlayerProjectile.tscn" type="PackedScene" id=5]
+
+[node name="Player" type="Sprite"]
+position = Vector2( 314.305, 306.368 )
+z_index = 1
+z_as_relative = false
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
+speed = 100.0
+
+[node name="Arm" type="Sprite" parent="."]
+position = Vector2( 14.8075, 48.2894 )
+scale = Vector2( 0.283719, 0.236973 )
+z_as_relative = false
+texture = ExtResource( 4 )
+offset = Vector2( 198.7, 1.28503 )
+script = ExtResource( 2 )
+projectile_scene = ExtResource( 5 )
+
+[node name="FirePosition" type="Position2D" parent="Arm"]
+position = Vector2( 389.378, -1.86292 )

@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://entities/player/Projectile.tscn" type="PackedScene" id=1]
+
+[node name="PlayerProjectile" instance=ExtResource( 1 )]
+speed = 50.0
+
+[node name="Sprite" parent="." index="0"]
+position = Vector2( 1.40005, 1.95811 )
+scale = Vector2( 0.0726762, 0.0834903 )
