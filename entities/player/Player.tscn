@@ -1,0 +1,38 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://entities/player/Player.gd" type="Script" id=1]
+[ext_resource path="res://assets/textures/player.png" type="Texture" id=2]
+[ext_resource path="res://assets/textures/cannon.png" type="Texture" id=3]
+[ext_resource path="res://entities/player/Cannon.gd" type="Script" id=4]
+[ext_resource path="res://entities/player/PlayerProjectile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://entities/player/Sprite.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 16.246, 29.8261 )
+
+[node name="Player" type="KinematicBody2D"]
+position = Vector2( -0.0635071, 0.165405 )
+script = ExtResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( -0.85779, 1.75373 )
+scale = Vector2( 0.199206, 0.172955 )
+texture = ExtResource( 2 )
+script = ExtResource( 6 )
+
+[node name="Cannon" type="Sprite" parent="."]
+position = Vector2( 18.8874, -1.54663 )
+scale = Vector2( 0.223806, 0.181829 )
+texture = ExtResource( 3 )
+offset = Vector2( 22.7644, -66.0247 )
+script = ExtResource( 4 )
+projectile_scene = ExtResource( 5 )
+
+[node name="CannonTip" type="Position2D" parent="Cannon"]
+position = Vector2( 60.4702, -128.467 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.696175, 4.42037 )
+shape = SubResource( 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
